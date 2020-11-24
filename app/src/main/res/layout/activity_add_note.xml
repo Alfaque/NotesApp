@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp"
+            android:clipToPadding="false"
+            android:paddingBottom="10dp"
+            tools:context=".Activity.AddNoteActivity">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/addnote_back_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:padding="4dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_arrow_back" />
+
+                <ImageView
+                    android:id="@+id/addnote_done_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:padding="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_check_circle" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addnote_back_imageView">
+
+                    <EditText
+                        android:id="@+id/addnote_title_edittext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_edit_search"
+                        android:ems="10"
+                        android:hint="Note title"
+                        android:inputType="textPersonName"
+                        android:padding="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/addnote_back_imageView" />
+
+                    <TextView
+                        android:id="@+id/addnote_datetime_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:text="TextView" />
+
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/addnote_subtitle_edittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_edit_search"
+                    android:ems="10"
+                    android:hint="Note subtite"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/subtitle_color_indicator"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+                <View
+                    android:id="@+id/subtitle_color_indicator"
+                    android:layout_width="10dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_subtitle_indicator"
+                    app:layout_constraintBottom_toBottomOf="@+id/addnote_subtitle_edittext"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+                <ImageView
+                    android:id="@+id/addnote_imageview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/addnote_subtitle_edittext" />
+
+                <TextView
+                    android:id="@+id/addnote_url_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:autoLink="web"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/addnote_imageview" />
+
+                <EditText
+                    android:id="@+id/addnote_note_edittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_edit_search"
+                    android:ems="10"
+                    android:gravity="start"
+                    android:hint="Note..."
+                    android:inputType="textPersonName"
+                    android:minHeight="100dp"
+                    android:padding="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/addnote_url_textview" />
+
+                <ImageView
+                    android:id="@+id/del_image_imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_delete_icon"
+                    android:padding="6dp"
+                    android:src="@drawable/ic_delete"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/addnote_imageview" />
+
+                <ImageView
+                    android:id="@+id/del_weburl_imageView"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/bg_delete_icon"
+                    android:padding="2dp"
+                    android:src="@drawable/ic_delete"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/addnote_url_textview"
+                    app:layout_constraintTop_toTopOf="@+id/addnote_url_textview" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <include layout="@layout/layout_miscellaneous" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
